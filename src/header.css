@@ -1,0 +1,51 @@
+#header{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    top:20px;
+    width: calc(100% -20px);
+    height:100px;
+    background-color: cadetblue;
+    border: 10px solid rgb(187, 243, 250);
+    border-radius: 100px;
+    justify-content: space-between;
+    
+}
+
+#linkIconContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    column-gap: 10px;
+    width: 50%;
+    justify-self: center;
+}
+
+.linkIcon{
+    position: relative;
+    max-width: 30%;
+}
+
+.iconLink{
+    position: relative;
+    width:100%;
+}
+
+#menuIcon{
+    position: relative;
+    left: 5%;
+    width: 10%;
+}
+#menuIcon:hover{
+    cursor:pointer;
+}
+
+.menuItem{
+    display: none;
+}
+#menu{
+    width: 50%;
+    display: grid;
+    align-items: end;
+}
