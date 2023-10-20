@@ -1,51 +1,82 @@
 #header{
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    top:20px;
-    width: calc(100% -20px);
+    grid-template-columns: 1fr 1fr;
     height:100px;
-    background-color: cadetblue;
-    border: 10px solid rgb(187, 243, 250);
-    border-radius: 100px;
+    background-color: rgb(247, 247, 247,0.75);
+    border-bottom: 4px solid rgb(0,0,0,0.25);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
     justify-content: space-between;
-    
+    margin-bottom:20px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 #linkIconContainer{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
-    position: relative;
+    justify-items: center;
     column-gap: 10px;
-    width: 50%;
-    justify-self: center;
+    justify-self: end;
+    align-self: center;
+    border:2px inset rgb(0,0,0,0.75);
+    border-radius: 30px;
+    padding: 15px;
 }
 
 .linkIcon{
     position: relative;
-    max-width: 30%;
+    max-width: 100%;
 }
 
 .iconLink{
     position: relative;
-    width:100%;
+    width: 50px;
 }
 
 #menuIcon{
     position: relative;
-    left: 5%;
-    width: 10%;
+    width: 80px;
+    object-fit: cover;
+    transition: transform 0.5s;
 }
 #menuIcon:hover{
-    cursor:pointer;
+    transform: scale(1.1);
 }
-
-.menuItem{
-    display: none;
+#menuIcon.rotated{
+    transform: rotate(180deg);
 }
 #menu{
-    width: 50%;
     display: grid;
-    align-items: end;
+    align-items: center;
+    height: 100%;
+}
+#menuContainer{
+    position: absolute;
+    top:0px;
+    left:130px;
+    display: grid;
+    background-color: rgba(50,50,50,0.1);
+    padding-left: 45px;
+    padding-right: 45px;
+    border-radius: 30px;
+    transition: top 1s ease-in-out;
+    top:-110px;
+}
+#menuContainer.lowering{
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    top:0px;
+}
+#menuContainer.raising{
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    top:-110px;
+}
+.menuItem{
+    font-size: large;
+}
+
+#menuIcon:hover{
+    cursor:pointer;
 }

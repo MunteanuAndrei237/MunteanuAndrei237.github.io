@@ -1,12 +1,2 @@
 
-a{
-    text-decoration: none;
-    
-}
-a:active {
-    color: black; /* You can set the color to the same as :visited or a different color */
-    outline: none; /* Prevent the default outline on click */
-}
-a:visited {
-    color: black;
-}
+
