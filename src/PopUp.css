@@ -32,6 +32,7 @@
 
 
 #popUpText {
+    padding-left: 40px;
     overflow: auto;
     max-height: 100%; 
 }
@@ -42,4 +43,14 @@
     margin-block-end: 0px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+}
+
+#copyLinkIcon{
+    width: 30px;
+    width:30px;
+    transition: 0.3s ease-in-out;
+}
+#copyLinkIcon:hover{
+    transform: scale(1.22);
+    cursor:pointer;
 }

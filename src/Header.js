@@ -34,14 +34,14 @@ function Header()
         <div id="menu">
             <img src="menuIcon.png" id="menuIcon"></img>
             <div id="menuContainer">
-                <a id="jumpToAbout" class="menuItem" href="#aboutMe">Jump to About</a>
-                <a id="jumpToProjects" class="menuItem" href="#githubProjects">Jump to Projects</a>
-                <a id="jumpToEducation" class="menuItem" href="#education">Jump to Education</a>
-                <a id="jumpToSkills" class="menuItem" href="#skills">Jump to Skills</a>
+                <a id="jumpToAbout" class="menuItem" href="#aboutMe">About</a>
+                <a id="jumpToProjects" class="menuItem" href="#githubProjects">Projects</a>
+                <a id="jumpToEducation" class="menuItem" href="#education">Education</a>
+                <a id="jumpToSkills" class="menuItem" href="#skills">Skills</a>
             </div>
         </div>
         <div id="linkIconContainer">
-            CONTACT
+            <p style={{fontFamily:"'luminari',fantasy"}}>CONTACT</p>
         <a href="https://www.linkedin.com/in/andrei-munteanu-138a1a292/" class="iconLink"><img src="linkedinIcon.png" class="linkIcon"></img></a>
         <a href="https://github.com/MunteanuAndrei237" class="iconLink"><img src="githubIcon.png" class="linkIcon"></img></a>
         <a href="https://www.facebook.com/andrei.munteanu.507679" class="iconLink"><img src="facebookIcon.png" class="linkIcon"></img></a>

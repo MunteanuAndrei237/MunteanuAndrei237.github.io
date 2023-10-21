@@ -31,3 +31,7 @@ a:hover{
   font-family: 'MedievalSharp', cursive;
   font-family: 'Merienda One', cursive;
 }
+::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none;
+}

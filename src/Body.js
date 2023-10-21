@@ -45,8 +45,8 @@ function minesweeperBotVideo(){
 
 It incorporates various sophisticated algorithms for optimizing move searches, including the minimax algorithm, alpha-beta pruning, and one devised by me, which attempts to predict the best move based on piece value. The program can reach a depth of 10 moves in under a second in most cases.</p>
                     <div class="buttonsContainer">
-                        <button class="seeDemoCode myButton" onClick={seeDemoCodeChessBot}>See Demo Code</button>
-                        <button class="seeFullCode myButton" onClick={seeFullCodeChessBot}>See Full Code</button>
+                        <button class="seeDemoCode myButton" onClick={seeDemoCodeChessBot}>Demo Code</button>
+                        <button class="seeFullCode myButton" onClick={seeFullCodeChessBot}>Access Full Code</button>
                         <button class="seeVideo myButton" onClick={chessBotVideo}>See video</button> 
                         </div>  
                         </div>
@@ -58,8 +58,8 @@ The program can analyze the screen to determine the number and location of tiles
 
 By utilizing a vector to check neighboring tiles and breaking the loop as soon as possible, the program can solve a medium-level Minesweeper game in just 30 seconds, with a mouse speed of 0.1 seconds per click.</p>
                     <div class="buttonsContainer">
-                        <button class="seeDemoCode myButton" onClick={seeDemoCodeMinesweeperBot}>See Demo Code</button>
-                        <button class="seeFullCode myButton" onClick={seeFullCodeMinesweeperBot}>See Full Code</button>
+                        <button class="seeDemoCode myButton" onClick={seeDemoCodeMinesweeperBot}>Demo Code</button>
+                        <button class="seeFullCode myButton" onClick={seeFullCodeMinesweeperBot}>Access Full Code</button>
                         <button class="seeVideo myButton" onClick={minesweeperBotVideo}>See video</button>
                         </div>                  
                 </div>

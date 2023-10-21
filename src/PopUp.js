@@ -13,7 +13,13 @@ function copyToClipboard(h){
 function stopPropagation(e){
     e.stopPropagation();
 }
+
 function PopUp(props){
+  var hreff;
+  if(props.props=="MinesweeperBotLink")
+   hreff="https://github.com/MunteanuAndrei237/minesweeperBot";
+  else if(props.props=="ChessBotLink")
+   hreff="https://github.com/MunteanuAndrei237/chess_bot";
     console.log(props.props)
     const [data, setData] = React.useState([["wait please.."],["wait please.."]]);
 
@@ -47,12 +53,18 @@ function PopUp(props){
         </div>
       ) : props.props === "ChessBotLink" || props.props === "MinesweeperBotLink" ? ( 
         <div id="popUpBoxLink" onClick={stopPropagation}>
-            <p>The full code is at the following link:</p>
-           
-            {props.props === "MinesweeperBotLink" ?(<a style={{color:"black"}} onClick={copyToClipboard("https://github.com/MunteanuAndrei237/minesweeperBot")} href="https://github.com/MunteanuAndrei237/minesweeperBot">https://github.com/MunteanuAndrei237/minesweeperBot</a>)
-            :props.props === "ChessBotLink" ?(<a style={{color:"black"}} href="https://github.com/MunteanuAndrei237/chess_bot">https://github.com/MunteanuAndrei237/chess_bot</a>):null}
-             <img src="copyLinkIcon.png" onClick={copyToClipboard("https://github.com/MunteanuAndrei237/minesweeperBot")}></img>
-        </div>
+    <p>The full code is at the following link:</p>
+    
+    {props.props === "MinesweeperBotLink" || props.props === "ChessBotLink" ? (
+      <a style={{ color: "black" }} href={hreff}>
+        {hreff}
+      </a>
+    ) : null}
+    {props.props === "MinesweeperBotLink" || props.props === "ChessBotLink" ? (
+      <img src="copyLinkIcon.png" id="copyLinkIcon" onClick={copyToClipboard(hreff)}></img>
+    ) : null}
+    
+  </div>
       ) : props.props === "ChessBotVideo" || props.props === "MinesweeperBotVideo" ? (
         <div id="popUpBoxVideo" onClick={stopPropagation}>
             <video id="minesweeperVideo" width="640" height="360" controls>

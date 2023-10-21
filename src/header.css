@@ -59,8 +59,8 @@
     left:130px;
     display: grid;
     background-color: rgba(50,50,50,0.1);
-    padding-left: 45px;
-    padding-right: 45px;
+    padding-left: 85px;
+    padding-right: 85px;
     border-radius: 30px;
     transition: top 1s ease-in-out;
     top:-110px;
