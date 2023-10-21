@@ -1,11 +1,13 @@
 import './PopUp.css';
-import React, { useState, useEffect } from 'react';
-import {dataPromise,fetchData} from './requestGit.js';
+import { useState, useEffect } from 'react';
+import {dataPromise} from './requestGit.js';
 function hidePopUp(){
-    document.getElementById("popUp").style.display="none";
-    // Pause the video
+document.getElementById("popUp").style.display="none";
+    
     if(document.getElementById("minesweeperVideo"))
 document.getElementById("minesweeperVideo").pause();
+if(document.getElementById("ChessBotVideo"))
+document.getElementById("ChessBotVideo").pause();
 }
 function copyToClipboard(h){
   navigator.clipboard.writeText(h);
@@ -16,14 +18,14 @@ function stopPropagation(e){
 
 function PopUp(props){
   var hreff;
-  if(props.props=="MinesweeperBotLink")
+  if(props.props==="MinesweeperBotLink")
    hreff="https://github.com/MunteanuAndrei237/minesweeperBot";
-  else if(props.props=="ChessBotLink")
+  else if(props.props==="ChessBotLink")
    hreff="https://github.com/MunteanuAndrei237/chess_bot";
-    console.log(props.props)
-    const [data, setData] = React.useState([["wait please.."],["wait please.."]]);
 
-  React.useEffect(() => {
+    const [data, setData] = useState([["wait please.."],["wait please.."]]);
+
+  useEffect(() => {
     // Use the dataPromise to get the data
     dataPromise.then((result) => {
       // Update the state with the fetched data
@@ -61,16 +63,26 @@ function PopUp(props){
       </a>
     ) : null}
     {props.props === "MinesweeperBotLink" || props.props === "ChessBotLink" ? (
-      <img src="copyLinkIcon.png" id="copyLinkIcon" onClick={copyToClipboard(hreff)}></img>
+      <img src="copyLinkIcon.png" id="copyLinkIcon" onClick={copyToClipboard(hreff)} alt="Media not avalabile"></img>
     ) : null}
     
   </div>
       ) : props.props === "ChessBotVideo" || props.props === "MinesweeperBotVideo" ? (
         <div id="popUpBoxVideo" onClick={stopPropagation}>
-            <video id="minesweeperVideo" width="640" height="360" controls>
-  <source src="2023-10-02 13-28-26.mp4" type="video/mp4" ></source>
-  Your browser does not support the video tag.
+            
+            {props.props === "ChessBotVideo" && (
+              <video id="ChessBotVideo" width="640" height="360" controls>
+    <source src="2023-10-21_20-49-17 - Trim.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
 </video>
+  )}
+  {props.props === "MinesweeperBotVideo" && (
+    <video id="minesweeperVideo" width="640" height="360" controls>
+    <source src="2023-10-02 13-28-26.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
+  )}
+ 
         </div>):null }
     </div>
   );

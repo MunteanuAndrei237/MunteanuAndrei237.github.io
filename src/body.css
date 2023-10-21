@@ -93,10 +93,37 @@
 
 #skillsGrid{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     column-gap: 20px;
     row-gap: 20px;
     width: 100%;
     justify-items: center;
     align-items: center;
+}
+
+#educationGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    width: 100%;
+    justify-items: center;
+    align-items: center;   
+}
+.skillsGridItem{
+    width: 85%;
+    display: grid;
+    justify-items: center;
+    align-items: center;   
+    grid-template-columns: 1fr 1fr;
+}
+.skillIcon{
+    width: 20px;
+    justify-self: end;
+    background-color: transparent;
+}
+li{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
 }

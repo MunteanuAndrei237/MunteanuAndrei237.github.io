@@ -66,47 +66,59 @@ By utilizing a vector to check neighboring tiles and breaking the loop as soon a
             </div>
             <div id="education" class="bodySection">
                 <h1>Education</h1>
+                <div id="educationGrid">
+                    <div id="CNITV">
                 <h5>Colegiul Național de Informatică Tudor Vianu</h5>
                 <p>I studied at Colegiul Național de Informatică Tudor Vianu, recognized as a top Computer Science high school in Romania. There, I built a solid foundation in mathematics, computer science, and C++ language, delving into both basic and advanced algorithms. Upon graduation in 2022, I achieved a commendable grade of 9.75/10 in Mathematics and 9.80/10 in Computer Science.</p>
+                </div>
+                <div id="FMI">
                 <h5>Faculty of Mathematics and Computer Science</h5>
                 <p>I am currently pursuing a Bachelor's degree in Computer Science, expected to graduate in 2025. Throughout my academic journey, I haven't just gained theoretical knowledge but have also delved deeply into Data Structures and operating system architectures. This period has provided me with a diverse coding language palette, including Python, C++, HTML, CSS, Javascript, PL/SQL, and Haskell. Additionally, I've familiarized myself with coding practices and principles, encompassing common notations and Object-Oriented Programming (OOP) concepts.</p>
+            </div>
+            </div>
             </div>
             <div id="skills" class="bodySection">
                 <h1>Skills</h1>
                 <div id="skillsGrid">
-                    Languages
+                    <div class="skillsGridItem">
+                    <p>Languages</p>
                     <ul>
                     <li>English </li>
                     <li>French</li>
                     <li>Romanian</li>
                     </ul>
-                    Soft skills
+                    </div>
+                    <div class="skillsGridItem">
+                    <p>Soft skills</p>
                     <ul>
                     <li>Critical thinking</li> 
                     <li>Problem solving</li> 
                     <li>Research </li>
                     <li>Team collaboration</li>
                     </ul>
-                     
-                    Front end languages and frameworks
+                    </div>
+                    <div class="skillsGridItem">
+                    <p>Front end languages, libraries  and frameworks</p>
                     <ul>
-                    <li>Javascript</li> 
-                    <li>HTML</li> 
-                    <li>CSS</li> 
-                    <li>Node.js</li> 
-                    <li>React</li> 
+                    <li>Javascript<img src="javascriptIcon.png" class="skillIcon"></img></li> 
+                    <li>HTML<img src="htmlIcon.png" class="skillIcon"></img></li> 
+                    <li>CSS<img src="cssIcon.png" class="skillIcon"></img></li> 
+                    <li>React<img src="reactIcon.png" class="skillIcon"></img></li> 
                     <li>Express</li> 
                     <li>Cheerio</li> 
                     </ul>
-                    Other languages
+                    </div>
+                    <div class="skillsGridItem">
+                    <p>Other programming languages</p>
                     <ul>
-                    <li>C++</li>  
-                    <li>Python</li>  
-                    <li>Java</li>  
-                    <li>SQL</li>  
-                    <li>haskell</li>  
-                    <li>C#</li> 
+                    <li>C++<img src="c++Icon.png" class="skillIcon"></img></li>  
+                    <li>Python<img src="pythonIcon.png" class="skillIcon"></img></li>  
+                    <li>Java<img src="javaIcon.png" class="skillIcon"></img></li>  
+                    <li>SQL<img src="sqlIcon.png" class="skillIcon"></img></li>  
+                    <li>Haskell<img src="haskellIcon.png" class="skillIcon"></img></li>  
+                    <li>C#<img src="csharpIcon.png" class="skillIcon"></img></li> 
                     </ul>
+                    </div>
                 </div>
             </div>
         </div>
