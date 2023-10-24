@@ -1,33 +1,42 @@
-var data
-async function fetchData() {
+var data;
 
-  try {
-    const response = await fetch('http://localhost:3001/get-repositories');
-    
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
+async function fetchDataWithRetry(url, retries = 3) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const response = await fetch(url);
+
+      if (response.ok) {
+        return response.json();
+      }
+    } catch (error) {
+      console.error(`Error fetching data (attempt ${i + 1}):`, error.message);
+
+      await new Promise((resolve) => setTimeout(resolve, 5000));
     }
-    data = await response.json();
+  }
+  throw new Error("Max retries reached");
+}
+
+async function fetchData() {
+  try {
+    data = await fetchDataWithRetry("http://localhost:3001/get-repositories");
   } catch (error) {
-    console.error('Error:', error.message);
+    console.error("Error:", error.message);
   }
 }
 
-// Call the function to fetch data
 fetchData();
 
-// Export a promise that resolves to the data
 export const dataPromise = new Promise((resolve) => {
   const checkData = () => {
     if (data) {
       resolve(data);
     } else {
-      setTimeout(checkData, 1000); // Check every 100ms until data is available
+      setTimeout(checkData, 1000);
     }
   };
 
   checkData();
 });
 
-// You can also export the fetchData function if needed
 export { fetchData };

@@ -80,3 +80,39 @@
 #menuIcon:hover{
     cursor:pointer;
 }
+
+
+@media only screen and (max-width: 700px) {
+    *{
+        font-size: small;
+    }
+    #header{
+      height:70px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .iconLink{
+        position: relative;
+        width: 20px;
+    }
+    #linkIconContainer{
+        padding: 9px;
+        max-height: 50px;
+        align-self: center;
+    }
+    #menuIcon{
+        max-width: 40px;
+    }
+    #menuContainer{
+        left:70px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .menuItem{
+        font-size: x-small;
+    }
+    #menuContainer.lowering{
+        transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+        top:12px;
+    }
+}

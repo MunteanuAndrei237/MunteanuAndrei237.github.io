@@ -1,11 +1,12 @@
-import './footer.css'
+import "./footer.css";
 
-function Footer(){
-    return(
-        <div id="footer">
-            <p style={{display:"inline"}}>App created using React frameork</p><a style={{display:"inline"}} color="white" href="https://react.dev/">https://react.dev/</a>
-        </div>
-    )
+function Footer() {
+  return (
+    <div id="footer">
+      <p>App created using React frameork</p>
+      <a href="https://react.dev/">https://react.dev/</a>
+    </div>
+  );
 }
 
 export default Footer;

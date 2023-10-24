@@ -1,14 +1,11 @@
-import './App.css';
-import Header from './Header.js';
-import Body from './Body.js';
-import Footer from './Footer.js';
-import PopUp from './PopUp';
+import Header from "./Header.js";
+import Body from "./Body.js";
+import Footer from "./Footer.js";
 function App() {
   return (
     <div className="App" style={{ height: "100%" }}>
-      
-      <Header/>
-      <Body/>
+      <Header />
+      <Body />
       <Footer />
     </div>
   );
