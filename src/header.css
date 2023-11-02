@@ -1,19 +1,19 @@
-#header{
+#header {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height:100px;
-    background-color: rgb(247, 247, 247,0.75);
-    border-bottom: 4px solid rgb(0,0,0,0.25);
+    height: 100px;
+    background-color: rgb(247, 247, 247, 0.75);
+    border-bottom: 4px solid rgb(0, 0, 0, 0.25);
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
     justify-content: space-between;
-    margin-bottom:20px;
+    margin-bottom: 20px;
     padding-left: 30px;
     padding-right: 30px;
 }
 
-#linkIconContainer{
+#linkIconContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
@@ -21,98 +21,112 @@
     column-gap: 10px;
     justify-self: end;
     align-self: center;
-    border:2px inset rgb(0,0,0,0.75);
+    border: 2px inset rgb(0, 0, 0, 0.75);
     border-radius: 30px;
     padding: 15px;
 }
 
-.linkIcon{
+.linkIcon {
     position: relative;
     max-width: 100%;
 }
 
-.iconLink{
+.iconLink {
     position: relative;
     width: 50px;
 }
 
-#menuIcon{
+#menuIcon {
     position: relative;
     width: 80px;
     object-fit: cover;
     transition: transform 0.5s;
 }
-#menuIcon:hover{
+
+#menuIcon:hover {
     transform: scale(1.1);
 }
-#menuIcon.rotated{
+
+#menuIcon.rotated {
     transform: rotate(180deg);
 }
-#menu{
+
+#menu {
     display: grid;
     align-items: center;
     height: 100%;
 }
-#menuContainer{
+
+#menuContainer {
     position: absolute;
-    top:0px;
-    left:130px;
+    top: 0px;
+    left: 130px;
     display: grid;
-    background-color: rgba(50,50,50,0.1);
+    background-color: rgba(50, 50, 50, 0.1);
     padding-left: 85px;
     padding-right: 85px;
     border-radius: 30px;
     transition: top 1s ease-in-out;
-    top:-110px;
+    top: -110px;
 }
-#menuContainer.lowering{
+
+#menuContainer.lowering {
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-    top:0px;
+    top: 0px;
 }
-#menuContainer.raising{
+
+#menuContainer.raising {
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-    top:-110px;
+    top: -110px;
 }
-.menuItem{
+
+.menuItem {
     font-size: large;
 }
 
-#menuIcon:hover{
-    cursor:pointer;
+#menuIcon:hover {
+    cursor: pointer;
 }
 
 
 @media only screen and (max-width: 700px) {
-    *{
+    * {
         font-size: small;
     }
-    #header{
-      height:70px;
-      padding-left: 15px;
-      padding-right: 15px;
+
+    #header {
+        height: 70px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
-    .iconLink{
+
+    .iconLink {
         position: relative;
         width: 20px;
     }
-    #linkIconContainer{
+
+    #linkIconContainer {
         padding: 9px;
         max-height: 50px;
         align-self: center;
     }
-    #menuIcon{
+
+    #menuIcon {
         max-width: 40px;
     }
-    #menuContainer{
-        left:70px;
+
+    #menuContainer {
+        left: 70px;
         padding-left: 30px;
         padding-right: 30px;
     }
-    .menuItem{
+
+    .menuItem {
         font-size: x-small;
     }
-    #menuContainer.lowering{
+
+    #menuContainer.lowering {
         transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-        top:12px;
+        top: 12px;
     }
 }

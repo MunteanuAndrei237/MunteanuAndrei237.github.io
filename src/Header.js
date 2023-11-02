@@ -16,7 +16,7 @@ function animateMenu(mi, mc, mo) {
 }
 
 function Header() {
-  var menuopened = false;
+  var menuOpened = false;
   var menuContainer = (
     <div id="menuContainer">
       <a id="jumpToAbout" className="menuItem" href="#aboutMe">
@@ -39,7 +39,7 @@ function Header() {
       id="menuIcon"
       alt="Media not avalabile"
       onClick={() => {
-        menuopened = animateMenu("menuIcon", "menuContainer", menuopened);
+        menuOpened = animateMenu("menuIcon", "menuContainer", menuOpened);
       }}
     ></img>
   );

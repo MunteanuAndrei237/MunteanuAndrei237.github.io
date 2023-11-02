@@ -3,15 +3,15 @@ import PopUp from "./PopUp";
 import React, { useState } from "react";
 
 function Body() {
-  const [popUpprops, setpopUpprops] = useState(0);
+  const [popUpProps, setpopUpProps] = useState(0);
   function renderPopUp(text) {
     document.getElementById("popUp").style.display = "flex";
-    setpopUpprops(text);
+    setpopUpProps(text);
   }
 
   return (
     <div id="body">
-      <PopUp props={popUpprops} />
+      <PopUp props={popUpProps} />
       <div className="bodySection" id="aboutMe">
         <h1>About me</h1>
         <p>

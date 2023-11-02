@@ -4,33 +4,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: azure;
   width: 100vw;
-    height: 100vh;
-    background-color: black;
-background-image: url("https://img.freepik.com/free-vector/dark-black-hexagonal-background-design_1017-38012.jpg");    
+  height: 100vh;
+  background-color: black;
+  background-image: url("https://img.freepik.com/free-vector/dark-black-hexagonal-background-design_1017-38012.jpg");
 }
 
-a{
+a {
   color: white;
   text-decoration: none;
   transition: transform 0.5s;
 }
+
 a:active {
-  color: white; /* You can set the color to the same as :visited or a different color */
-  outline: none; /* Prevent the default outline on click */
+  color: white;
+  outline: none;
 }
+
 a:visited {
   color: white;
 }
-a:hover{
-  transform:scale(1.2);
+
+a:hover {
+  transform: scale(1.2);
 }
 
-*{
+* {
   font-size: large;
   font-family: 'Helvetica', sans-serif;
-  font-family: 'Arial' , sans-serif;
+  font-family: 'Arial', sans-serif;
 
 }
+
 ::-webkit-scrollbar {
   display: none;
   scrollbar-width: none;

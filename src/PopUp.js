@@ -18,12 +18,12 @@ function stopPropagation(e) {
   e.stopPropagation();
 }
 
-function PopUp(props) {
-  var hreff;
-  if (props.props === "MinesweeperBotLink")
-    hreff = "https://github.com/MunteanuAndrei237/minesweeperBot";
-  else if (props.props === "ChessBotLink")
-    hreff = "https://github.com/MunteanuAndrei237/chess_bot";
+function PopUp(args) {
+  var myHref;
+  if (args.props === "MinesweeperBotLink")
+    myHref = "https://github.com/MunteanuAndrei237/minesweeperBot";
+  else if (args.props === "ChessBotLink")
+    myHref = "https://github.com/MunteanuAndrei237/chess_bot";
 
   const [data, setData] = useState([["wait please.."], ["wait please.."]]);
 
@@ -35,11 +35,10 @@ function PopUp(props) {
 
   return (
     <div id="popUp" onClick={hidePopUp}>
-      {props.props === "MinesweeperBotCode" ||
-      props.props === "ChessBotCode" ? (
+      {args.props === "MinesweeperBotCode" || args.props === "ChessBotCode" ? (
         <div id="popUpBoxCode" onClick={stopPropagation}>
           <div id="popUpText">
-            {props.props === "MinesweeperBotCode"
+            {args.props === "MinesweeperBotCode"
               ? data[0].map((item, index) => (
                   <p
                     className="codep"
@@ -49,7 +48,7 @@ function PopUp(props) {
                     {item}
                   </p>
                 ))
-              : props.props === "ChessBotCode"
+              : args.props === "ChessBotCode"
               ? data[1].map((item, index) => (
                   <p
                     className="codep"
@@ -62,37 +61,37 @@ function PopUp(props) {
               : null}
           </div>
         </div>
-      ) : props.props === "ChessBotLink" ||
-        props.props === "MinesweeperBotLink" ? (
+      ) : args.props === "ChessBotLink" ||
+        args.props === "MinesweeperBotLink" ? (
         <div id="popUpBoxLink" onClick={stopPropagation}>
           <p>The full code is at the following link:</p>
 
-          {props.props === "MinesweeperBotLink" ||
-          props.props === "ChessBotLink" ? (
-            <a style={{ color: "black" }} href={hreff}>
-              {hreff}
+          {args.props === "MinesweeperBotLink" ||
+          args.props === "ChessBotLink" ? (
+            <a style={{ color: "black" }} href={myHref}>
+              {myHref}
             </a>
           ) : null}
-          {props.props === "MinesweeperBotLink" ||
-          props.props === "ChessBotLink" ? (
+          {args.props === "MinesweeperBotLink" ||
+          args.props === "ChessBotLink" ? (
             <img
               src="copyLinkIcon.png"
               id="copyLinkIcon"
-              onClick={copyToClipboard(hreff)}
+              onClick={copyToClipboard(myHref)}
               alt="Media not avalabile"
             ></img>
           ) : null}
         </div>
-      ) : props.props === "ChessBotVideo" ||
-        props.props === "MinesweeperBotVideo" ? (
+      ) : args.props === "ChessBotVideo" ||
+        args.props === "MinesweeperBotVideo" ? (
         <div id="popUpBoxVideo" onClick={stopPropagation}>
-          {props.props === "ChessBotVideo" && (
+          {args.props === "ChessBotVideo" && (
             <video id="ChessBotVideo" controls muted>
               <source src="2023-10-21_20-49-17 - Trim.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           )}
-          {props.props === "MinesweeperBotVideo" && (
+          {args.props === "MinesweeperBotVideo" && (
             <video id="minesweeperVideo" controls>
               <source src="2023-10-02 13-28-26.mp4" type="video/mp4" />
               Your browser does not support the video tag.
