@@ -1,15 +1,6 @@
 import "./popUp.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, forwardRef } from "react";
 import { dataPromise } from "./RequestGit.js";
-
-function hidePopUp() {
-  document.getElementById("popUp").style.display = "none";
-
-  if (document.getElementById("minesweeperVideo"))
-    document.getElementById("minesweeperVideo").pause();
-  if (document.getElementById("ChessBotVideo"))
-    document.getElementById("ChessBotVideo").pause();
-}
 
 function copyToClipboard(link) {
   navigator.clipboard.writeText(link);
@@ -18,14 +9,30 @@ function stopPropagation(e) {
   e.stopPropagation();
 }
 
-function PopUp(args) {
+const PopUp = forwardRef((args, ref) => {
+  const chessBotVideoRef = useRef(null);
+  const minesweeperVideoRef = useRef(null);
+  const graphMakerVideoRef = useRef(null);
+
+  function hidePopUp() {
+    ref.current.style.display = "none";
+    if (chessBotVideoRef.current) chessBotVideoRef.current.pause();
+    if (minesweeperVideoRef.current) minesweeperVideoRef.current.pause();
+    if (graphMakerVideoRef.current) graphMakerVideoRef.current.pause();
+  }
   var myHref;
   if (args.props === "MinesweeperBotLink")
     myHref = "https://github.com/MunteanuAndrei237/minesweeperBot";
   else if (args.props === "ChessBotLink")
     myHref = "https://github.com/MunteanuAndrei237/chess_bot";
+  else if (args.props === "GraphMakerLink")
+    myHref = "https://github.com/MunteanuAndrei237/graphMaker";
 
-  const [data, setData] = useState([["wait please.."], ["wait please.."]]);
+  const [data, setData] = useState([
+    ["wait please.."],
+    ["wait please.."],
+    ["wait please.."],
+  ]);
 
   useEffect(() => {
     dataPromise.then((result) => {
@@ -34,8 +41,10 @@ function PopUp(args) {
   }, []);
 
   return (
-    <div id="popUp" onClick={hidePopUp}>
-      {args.props === "MinesweeperBotCode" || args.props === "ChessBotCode" ? (
+    <div id="popUp" onClick={hidePopUp} ref={ref}>
+      {args.props === "MinesweeperBotCode" ||
+      args.props === "ChessBotCode" ||
+      args.props === "GraphMakerCode" ? (
         <div id="popUpBoxCode" onClick={stopPropagation}>
           <div id="popUpText">
             {args.props === "MinesweeperBotCode"
@@ -58,42 +67,53 @@ function PopUp(args) {
                     {item}
                   </p>
                 ))
+              : args.props === "GraphMakerCode"
+              ? data[2].map((item, index) => (
+                  <p
+                    className="codep"
+                    key={index}
+                    style={{ whiteSpace: "pre-wrap" }}
+                  >
+                    {item}
+                  </p>
+                ))
               : null}
           </div>
         </div>
       ) : args.props === "ChessBotLink" ||
-        args.props === "MinesweeperBotLink" ? (
+        args.props === "MinesweeperBotLink" ||
+        args.props === "GraphMakerLink" ? (
         <div id="popUpBoxLink" onClick={stopPropagation}>
           <p>The full code is at the following link:</p>
-
-          {args.props === "MinesweeperBotLink" ||
-          args.props === "ChessBotLink" ? (
-            <a style={{ color: "black" }} href={myHref}>
-              {myHref}
-            </a>
-          ) : null}
-          {args.props === "MinesweeperBotLink" ||
-          args.props === "ChessBotLink" ? (
-            <img
-              src="copyLinkIcon.png"
-              id="copyLinkIcon"
-              onClick={copyToClipboard(myHref)}
-              alt="Media not avalabile"
-            ></img>
-          ) : null}
+          <a style={{ color: "black" }} href={myHref}>
+            {myHref}
+          </a>
+          <img
+            src="copyLinkIcon.png"
+            id="copyLinkIcon"
+            onClick={copyToClipboard(myHref)}
+            alt="Media not avalabile"
+          ></img>
         </div>
       ) : args.props === "ChessBotVideo" ||
-        args.props === "MinesweeperBotVideo" ? (
+        args.props === "MinesweeperBotVideo" ||
+        args.props === "GraphMakerVideo" ? (
         <div id="popUpBoxVideo" onClick={stopPropagation}>
           {args.props === "ChessBotVideo" && (
-            <video id="ChessBotVideo" controls muted>
+            <video ref={chessBotVideoRef} controls muted>
               <source src="2023-10-21_20-49-17 - Trim.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           )}
           {args.props === "MinesweeperBotVideo" && (
-            <video id="minesweeperVideo" controls>
+            <video ref={minesweeperVideoRef} controls>
               <source src="2023-10-02 13-28-26.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
+          {args.props === "GraphMakerVideo" && (
+            <video ref={graphMakerVideoRef} controls>
+              <source src="2023-11-30 19-27-39 - Trim.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           )}
@@ -101,6 +121,6 @@ function PopUp(args) {
       ) : null}
     </div>
   );
-}
+});
 
 export default PopUp;

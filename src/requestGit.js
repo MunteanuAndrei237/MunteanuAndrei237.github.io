@@ -19,7 +19,9 @@ async function fetchDataWithRetry(url, retries = 3) {
 
 async function fetchData() {
   try {
-    data = await fetchDataWithRetry("https://expressapp-23dx.onrender.com/get-repositories");
+    data = await fetchDataWithRetry(
+      "https://expressapp-23dx.onrender.com/get-repositories"
+    );
   } catch (error) {
     console.error("Error:", error.message);
   }

@@ -1,26 +1,37 @@
-#body {
-    display: grid;
-    row-gap: 20px;
-    justify-items: center;
+.bodySection {
+    position: relative;
+    background-color: rgba(10, 10, 10, 0.95);
+    left: 10vw;
+    width: 80vw;
+    padding: 20px;
+    transition: transform 0.5s;
+    margin-top: 3vh;
+    box-sizing: border-box;
+    color: white;
 }
 
-.bodySection {
-    background-color: rgba(255, 255, 255, 0.82);
-    border: 4px inset rgb(0, 0, 0, 0.85);
-    border-radius: 25px;
-    width: 90%;
-    padding: 20px;
-    transition: transform 0.5s
+.bodySectionContainer {
+    min-height: 80vh;
 }
 
 .bodySection:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
 .buttonsContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.imagesFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imagesFlex>* {
+    width: 49%;
 }
 
 .myButton {
@@ -62,8 +73,6 @@
     column-gap: 20px;
     row-gap: 20px;
     width: 100%;
-    justify-items: center;
-    align-items: center;
 }
 
 .skillsGridItem {
@@ -89,11 +98,11 @@ li {
 .seeDemoCode {
     background-color: rgb(44, 187, 99);
     box-shadow: rgba(44, 187, 99, 0.1) 0 -25px 18px -14px inset,
-        rgba(44, 187, 99, 0.2) 0 1px 2px,
-        rgba(44, 187, 99, 0.2) 0 2px 4px,
-        rgba(44, 187, 99, 0.2) 0 4px 8px,
-        rgba(44, 187, 99, 0.2) 0 8px 16px,
-        rgba(44, 187, 99, 0.2) 0 16px 32px;
+        rgba(44, 187, 99, 0.1) 0 1px 2px,
+        rgba(44, 187, 99, 0.1) 0 2px 4px,
+        rgba(44, 187, 99, 0.1) 0 4px 8px,
+        rgba(44, 187, 99, 0.1) 0 8px 16px,
+        rgba(44, 187, 99, 0.1) 0 16px 32px;
 }
 
 .seeDemoCode:hover {
@@ -144,14 +153,22 @@ li {
         rgba(185, 44, 44, 0.3) 0 16px 32px;
 }
 
-h1 {
-    font-size: 1.5em;
-
-}
-
 @media only screen and (max-width: 700px) {
     .myButton {
-        font-size: small;
+        font-size: x-small;
         border-radius: 20px;
+    }
+
+    .imagesFlex {
+        display: grid;
+        row-gap: 2vh;
+    }
+
+    .imagesFlex>* {
+        width: 100%;
+    }
+
+    #educationGrid {
+        grid-template-columns: 1fr;
     }
 }

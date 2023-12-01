@@ -6,7 +6,17 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: black;
-  background-image: url("https://img.freepik.com/free-vector/dark-black-hexagonal-background-design_1017-38012.jpg");
+  background-image: url("/public/background.jpg");
+  background-size: cover;
+  font-size: large;
+  font-family: 'Helvetica', sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-size: 1.5em;
 }
 
 a {
@@ -25,17 +35,16 @@ a:visited {
 }
 
 a:hover {
-  transform: scale(1.2);
-}
-
-* {
-  font-size: large;
-  font-family: 'Helvetica', sans-serif;
-  font-family: 'Arial', sans-serif;
-
+  transform: scale(1.1);
 }
 
 ::-webkit-scrollbar {
   display: none;
   scrollbar-width: none;
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    font-size: small;
+  }
 }
